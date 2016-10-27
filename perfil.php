@@ -28,7 +28,7 @@ if(isset($_COOKIE['ywd_usu']) && $_COOKIE['ywd_usu']!='' ){
 	$smarty->assign("idFb",$idFacebook);
 	$smarty->display("edit-profile.html");
 }else{
-	header('location: registro.php');
+	header('location: registro');
 }
 
 ?>
