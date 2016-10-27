@@ -500,10 +500,11 @@ function compartirFacebook(title,picture){
  FB.ui({
    method: 'feed',
    name: title,
-   link: "https://pinguinos-julian10404.c9users.io/?"+enc,
+   link: "http://www.heladospinguino.com.ec/planpinguino/?"+enc,
    picture: picture,
    description: 'Pingüino, Sponsor del fin de semana'
    
  });
   
 }
+
