@@ -41,7 +41,7 @@ jQuery(document).ready(function(){
 											}
 										}
 			},
-			provincia: {required: true,letras:true,},
+			//provincia: {required: true,letras:true,},
 			ciudad: {required: true,letras:true,},
 			lepas:{required: true},
 			 lepasc:{required: true,
@@ -55,7 +55,7 @@ jQuery(document).ready(function(){
 			name: {required: 'El nombre es requerido', letras:'El campo nombre no debe contener números ni caracteres especiales', accept: "Solo se aceptan letras"},
 			apellido: {required: 'El campo es requerido', letras:'El campo apellido no debe contener números ni caracteres especiales' , accept: "Solo se aceptan letras"},
 			email: {required: 'Por favor ingrese un e-mail', email:'Ingrese un e-mail con formato v&aacute;lido',remote: jQuery.validator.format("{0} Ya se encuentra registrado.")},
-			provincia: {required: 'Ingrese una provincia'},
+			//provincia: {required: 'Ingrese una provincia'},
 			ciudad: {required: 'Ingrese una ciudad'},
 			lepas:{required: 'El campo contrase&ntilde;a no debe estar vac&iacute;o'},
 			 lepasc:{required: 'El campo contrase&ntilde;a no debe estar vac&iacute;o',
@@ -101,9 +101,9 @@ jQuery(document).on('change','#lepas',function(){
 					
 				}
 				if(validated==false){
-					jQuery('#confirmar').hide('float').attr('disabled','disabled');
+					jQuery('#confirmar').attr('disabled','disabled');
 				}else{
-					jQuery('#confirmar').show('float').removeAttr('disabled');
+					jQuery('#confirmar').removeAttr('disabled');
 				}
 				/*Se ponen los errores en el html*/
 				//jQuery('div').text(validated ? "pass" : "fail");
