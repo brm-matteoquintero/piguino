@@ -1,0 +1,127 @@
+article{
+	margin: 0 auto;
+	height: 100%;
+	display: table;
+}
+form p{
+	font-family: stick;
+	color: #666667;
+	text-align: center;
+	display: block;
+	margin: 3% auto 6% auto;
+}
+#helicopter{
+	position: absolute;
+}
+
+#balloon{
+	position: absolute;
+}
+
+#camera{
+	position: absolute;
+}
+
+#car{
+	position: absolute;
+	right: 0;
+}
+
+#trolley{
+	position: absolute;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 479px) {
+	#copy-rp{width: 80%;display: block;margin: 0 auto;}
+	#hot-air-balloon{width: 33px;top: 16%;left: 2%;position: absolute;}
+	#helicopter{width: 66px;top: 3%;right: 6%;}
+	#balloon{width: 64px;top: 42%;left: 4%;display: none;}
+	#camera{width: 38px;bottom: 7%;right: 8%;}
+	#car{width: 61px;bottom: 27%;right: 19%;display: none;}
+	#trolley{width: 46px;bottom: 4%;left: 17%;}
+	.button{ width: 100%; margin-top: 20px;}
+	article{width: 90%;}
+	form p{font-size: 17px;letter-spacing: 1px;width: 80%;margin: 3% auto 7% auto;}
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 480px) 
+and (max-width : 767px) {
+	#copy-rp{width: 80%;display: block;margin: 0 auto;}
+	#hot-air-balloon{width: 50px;top: 11%;left: 14%;position: absolute;}
+	#helicopter{width: 84px;top: 14%;right: 11%;}
+	#balloon{width: 64px;top: 42%;left: 4%;}
+	#camera{width: 60px;top: 39%;right: 8%;}
+	#car{width: 61px;bottom: 27%;right: 19%;display: none;}
+	#trolley{width: 71px;bottom: 13%;left: 28%;display: none;}
+	.button{ width: 100%; margin-top: 20px;}
+	article{width: 63%;}
+	form p{font-size: 19px;letter-spacing: 1px;width: 80%;margin: 3% auto 7% auto;}
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1023px) {
+	#copy-rp{width: 65%;display: block;margin: 0 auto;}
+	#hot-air-balloon{width: 50px;top: 11%;left: 14%;position: absolute;}
+	#helicopter{width: 84px;top: 14%;right: 11%;}
+	#balloon{width: 64px;top: 42%;left: 4%;}
+	#camera{width: 60px;top: 39%;right: 8%;}
+	#car{width: 61px;bottom: 27%;right: 19%;display: none;}
+	#trolley{width: 71px;bottom: 13%;left: 28%;display: none;}
+	.button{ width: 100%; margin-top: 20px;}
+	article{width: 63%;}
+	form p{font-size: 21px;letter-spacing: 2px;width: 77%;margin: 3% auto 7% auto;}
+}
+
+/* Desktops and laptops 1 ----------- */
+@media only screen 
+and (min-width : 1024px) 
+and (max-width : 1223px){
+	#copy-rp{width: 75%;display: block;margin: 0 auto;}
+	#hot-air-balloon{width: 50px;top: 11%;left: 14%;position: absolute;}
+	#helicopter{width: 96px;top: 13%;right: 20%;}
+	#balloon{width: 75px;top: 42%;left: 18%;}
+	#camera{width: 79px;top: 39%;right: 8%;}
+	#car{width: 70px;bottom: 27%;right: 25%;}
+	#trolley{width: 71px;bottom: 24%;left: 28%;}
+	.button{ width: 100%; margin-top: 20px;}
+	article{width: 47%;}
+	form p{font-size: 25px;letter-spacing: 2px;width: 80%;}
+}
+
+/* Desktops and laptops 2 ----------- */
+@media only screen 
+and (min-width : 1224px) 
+and (max-width : 1499px){
+	#copy-rp{width: 75%;display: block;margin: 0 auto;}
+	#hot-air-balloon{width: 50px;top: 11%;left: 14%;position: absolute;}
+	#helicopter{width: 96px;top: 13%;right: 20%;}
+	#balloon{width: 75px;top: 42%;left: 18%;}
+	#camera{width: 79px;top: 39%;right: 8%;}
+	#car{width: 70px;bottom: 27%;right: 25%;}
+	#trolley{width: 71px;bottom: 24%;left: 28%;}
+	.button{ width: 100%; margin-top: 20px;}
+	article{width: 35%;}
+	form p{font-size: 25px;letter-spacing: 2px;width: 80%;}
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1500px) {
+	#copy-rp{width: 75%;display: block;margin: 0 auto;}
+	#hot-air-balloon{width: 60px;top: 3%;left: 14%;position: absolute;}
+	#helicopter{width: 120px;top: 13%;right: 20%;}
+	#balloon{width: 80px;top: 42%;left: 18%;}
+	#camera{width: 90px;top: 41%;right: 9%;}
+	#car{width: 80px;bottom: 25%;right: 26%;}
+	#trolley{width: 80px;bottom: 28%;left: 28%;}
+	.button{ width: 100%; margin-top: 20px;}
+	article{width: 30%;}
+	form p{font-size: 25px;letter-spacing: 2px;width: 80%;}
+}

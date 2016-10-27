@@ -1,0 +1,6 @@
+{
+  "name": "pinguino",
+  "devDependencies": {
+    "grunt-contrib-pug": "^1.0.0"
+  }
+}

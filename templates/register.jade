@@ -1,0 +1,58 @@
+include master/general/doctype.jade
+	include master/general/head.jade
+		link(rel='stylesheet', href='css/form.css')
+		link(rel='stylesheet', href='css/register.css')
+	body.white
+		include master/general/message.jade
+		include master/general/header.jade
+		section
+			include master/svg/hot-air-balloon-red.jade
+			include master/svg/helicopter-red.jade
+			include master/svg/balloon-red.jade
+			include master/svg/camera-red.jade
+			include master/svg/car-red.jade
+			include master/svg/trolley-red.jade
+			article
+				form(autocomple="off" id="pinguino" name="pinguino")
+					include master/svg/copy-register.jade
+					#button-facebook Ingresa con Facebook
+					input(type="text" id="idRs" name="idRs")
+					.goup-left
+						label(for="name") Nombres
+						input(type="text" id="name" name="name" tabindex="1")
+
+						label(for="name") Email
+						input(type="email" id="email" name="email" tabindex="3")
+						
+						label(for="name") Contraseña
+						input(type="password" id="lepas" name="lepas" abindex="5")
+
+					.goup-right
+						label(for="name") Apellidos
+						input(type="text" id="apellido" name="apellido" tabindex="2")
+
+						label(for="name") Ciudad
+						input(type="text" id="ciudad" name="ciudad" tabindex="4")
+
+						label(for="name") Confirma tu contraseña
+						input(type="password" id="lepasc" name="lepasc" tabindex="6")
+							
+					.goup-middle
+
+						#terms
+							.checkbox
+								input(type="checkbox" value="S" id="check-terms" name="check")
+								label(for="check-terms")
+							p He leído y estoy de acuerdo con los términos y condiciones y con las políticas y tratamiento de datos personales.
+						.button(id="volver") volver
+						.button(id="confirmar") confirmar
+		include master/general/footer.jade
+		include master/general/scripts.jade
+		script(src="js/vendor/jquery.validate.min.js")
+		script(src="js/vendor/additional-methods.min.js")
+		script(src='js/registroFb.js')
+		script(src='js/register.js')
+
+
+
+

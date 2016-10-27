@@ -1,0 +1,78 @@
+include master/general/doctype.jade
+	include master/general/head.jade
+		link(rel='stylesheet', href='css/recipes.css')
+	body.white
+		include master/general/message.jade
+		include master/general/header.jade
+		section
+			article#init
+				include master/svg/hot-air-balloon-red.jade
+				include master/svg/helicopter-red.jade
+				include master/svg/welcome.jade
+				include master/svg/hashtag.jade
+				div#cream-jar
+					img(src="img/cream-jar.png")
+				span#name
+				include master/svg/message.jade
+				include master/svg/balloon-red.jade
+				include master/svg/camera-red.jade
+			article#recipes
+				span ¡Descubramos juntos las recetas!
+				include master/svg/line-up.jade
+				include master/svg/arrow-up.jade
+				#thumbnails
+					div(class="mix category-1" data="thumbnail{#$id-1#}")
+						include master/square-thumbnail/1.jade
+					div(class="mix category-1" data="thumbnail{#$id-2#}")
+						include master/square-thumbnail/2.jade
+					div(class="mix category-1" data="thumbnail{#$id-3#}")
+						include master/square-thumbnail/3.jade
+					div(class="mix category-1" data="thumbnail{#$id-4#}")
+						include master/square-thumbnail/4.jade
+					div(class="mix category-1" data="thumbnail{#$id-5#}")
+						include master/square-thumbnail/5.jade
+
+					div(id="sponsor" class="mix category-1 category-2 category-3 category-4")
+						include master/svg/square-sponsor.jade
+
+					div(class="mix category-2" data="thumbnail{#$id-6#}")
+						include master/square-thumbnail/6.jade
+					div(class="mix category-2" data="thumbnail{#$id-7#}")
+						include master/square-thumbnail/7.jade
+					div(class="mix category-2" data="thumbnail{#$id-8#}")
+						include master/square-thumbnail/8.jade
+					div(class="mix category-2" data="thumbnail{#$id-9#}")
+						include master/square-thumbnail/9.jade		
+					div(class="mix category-2" data="thumbnail{#$id-10#}")
+						include master/square-thumbnail/10.jade
+
+					div(class="mix category-3" data="thumbnail{#$id-11#}")
+						include master/square-thumbnail/11.jade
+					div(class="mix category-3" data="thumbnail{#$id-12#}")
+						include master/square-thumbnail/12.jade
+					div(class="mix category-3" data="thumbnail{#$id-13#}")
+						include master/square-thumbnail/13.jade
+					div(class="mix category-3" data="thumbnail{#$id-14#}")
+						include master/square-thumbnail/14.jade		
+					div(class="mix category-3" data="thumbnail{#$id-15#}")
+						include master/square-thumbnail/15.jade
+
+					div(class="mix category-4" data="thumbnail{#$id-16#}")
+						include master/square-thumbnail/16.jade
+					div(class="mix category-4" data="thumbnail{#$id-17#}")
+						include master/square-thumbnail/17.jade
+					div(class="mix category-4" data="thumbnail{#$id-18#}")
+						include master/square-thumbnail/18.jade
+					div(class="mix category-4" data="thumbnail{#$id-19#}")
+						include master/square-thumbnail/19.jade	
+					div(class="mix category-4" data="thumbnail{#$id-20#}")
+						include master/square-thumbnail/20.jade	
+						
+				include master/svg/line-down.jade
+				include master/svg/arrow-down.jade
+
+		include master/general/footer.jade
+		include master/general/scripts.jade
+		script(src='js/vendor/mixitup.min.js')
+		script(src='js/lsc.js')
+		script(src='js/recipes.js')

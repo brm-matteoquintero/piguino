@@ -1,0 +1,68 @@
+include master/general/doctype.jade
+	include master/general/head.jade
+		link(rel='stylesheet', href='css/changing-box.css')
+		link(rel='stylesheet', href='css/synchronize.css')
+	body.white
+		include master/general/message.jade	
+		include master/general/header.jade
+		section#gesture-content
+			article
+				#code-synchronize
+					span Ingresa el código
+					input(type="number" id="code-mobile" name="code-mobile" maxlength="5")
+					.button#send-code Sincronizar
+				#box-synchronize(class="box")
+					#info
+						#info-icon
+						#info-text {#$nombre#}
+					#plans
+						#plans-close.close
+						#plans-image
+							#plans-image-copy
+							#plans-share
+								¡Invita a todos tus amigos!
+								.button compartir
+						#plans-text-container
+							#plans-text
+								include master/plans/1.jade
+					include master/svg/copy-up-synchronize.jade
+					include master/svg/copy-steps-synchronize.jade
+					#shadows
+						#shadow-top
+						#shadow-left
+						#shadow-right
+					#options
+						#synchronize
+							include master/svg/icon-mobile-synchronize.jade
+							include master/svg/icon-desktop-synchronize-2.jade
+							include master/svg/steps-synchronize.jade
+							include master/svg/qr-code.svg
+							a(href="#")|Continuar sin experiencia
+						#no-synchronize
+							include master/svg/icon-desktop-synchronize.jade
+							include master/svg/icon-mobile-synchronize-2.jade
+				#box-action(class="box")
+					#steps-action.action-helpers
+					include master/svg/title-video.jade
+					#bg-distort
+					#shadows
+						#shadow-top
+						#shadow-left
+						#shadow-right
+				#desktop-mobile-area
+					#steps-action
+					span Área sensible
+				#action.action-helpers
+					.sprite
+					span#action-text
+		include master/general/footer.jade
+		include master/general/scripts.jade
+		script(type="text/javascript" src="js/vendor/sequencer.canvas.js")
+		script(type="text/javascript" src="js/vendor/sequencer.benchmark.js")
+		script(type="text/javascript" src="js/vendor/hammer.min.js")
+		script(src='https://pinguino-julian10404.c9users.io/socket.io/socket.io.js')
+		script(src='js/eventActions.js')
+		script(src='js/lsc.js')
+		script(src='js/clientWeb.js')
+		script(src='js/clientCel.js')
+		script(src='js/synchronize.js')

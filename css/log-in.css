@@ -1,0 +1,133 @@
+article{
+	margin: 0 auto;
+	display: table;
+	height: 100%;
+}
+
+#copy-log-in{
+	position: relative;
+	display: block;
+}
+
+#helicopter{
+	position: absolute;
+}
+
+#balloon{
+	position: absolute;
+}
+
+#camera{
+	position: absolute;
+}
+
+#car{
+	position: absolute;
+	right: 0;
+}
+
+#trolley{
+	position: absolute;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 479px) {
+
+	article{width: 80%;margin-top: 9%;}
+	#hot-air-balloon{width: 29px;top: 11%;left: 1%;position: absolute;}
+	#helicopter{width: 51px;top: 8%;right: 4%;}
+	#balloon{width: 38px;top: 40%;left: 13%;display: none;}
+	#camera{width: 37px;top: 41%;right: 5%;display: none;}
+	#car{width: 56px;bottom: 25%;right: 4%;display: none;}
+	#trolley{width: 69px;bottom: 28%;left: 6%;display: none;}
+	.button{width: 100%;margin-top: 20px;}
+	#copy-log-in{width: 240px;margin: 0 auto 5% auto;}
+	#button-facebook{width: 100%;height: 40px;font-size: 18px;line-height: 40px;background-size: 3%;background-position: 13% 10px;}
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 480px) 
+and (max-width : 767px) {
+
+	article{width: 80%;margin-top: 9%;}
+	#hot-air-balloon{width: 34px;top: 11%;left: 1%;position: absolute;}
+	#helicopter{width: 61px;top: 8%;right: 1%;}
+	#balloon{width: 38px;top: 40%;left: 13%;display: none;}
+	#camera{width: 37px;top: 41%;right: 5%;display: none;}
+	#car{width: 56px;bottom: 25%;right: 4%;display: none;}
+	#trolley{width: 69px;bottom: 28%;left: 6%;display: none;}
+	.button{width: 100%;margin-top: 20px;}
+	#copy-log-in{width: 270px;margin: 0 auto 5% auto;}
+	#button-facebook{width: 100%;height: 40px;font-size: 18px;line-height: 40px;background-size: 3%;background-position: 13% 10px;}
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1023px) {
+
+	article{width: 57%;}
+	#hot-air-balloon{width: 52px;top: 11%;left: 13%;position: absolute;}
+	#helicopter{width: 80px;top: 13%;right: 7%;}
+	#balloon{width: 59px;top: 40%;left: 13%;}
+	#camera{width: 63px;top: 41%;right: 9%;}
+	#car{width: 56px;bottom: 25%;right: 4%;}
+	#trolley{width: 69px;bottom: 28%;left: 6%;}
+	.button{width: 100%;margin-top: 20px;}
+	#copy-log-in{width: 290px;margin: 0 auto 5% auto;}
+	#button-facebook{width: 100%;height: 50px;font-size: 20px;line-height: 50px;background-size: 3%;background-position: 13% 10px;}
+}
+
+/* Desktops and laptops 1 ----------- */
+@media only screen 
+and (min-width : 1024px) 
+and (max-width : 1223px){
+
+	article{width: 48%;}
+	#hot-air-balloon{width: 52px;top: 11%;left: 16%;position: absolute;}
+	#helicopter{width: 92px;top: 13%;right: 16%;}
+	#balloon{width: 67px;top: 42%;left: 18%;}
+	#camera{width: 79px;top: 41%;right: 9%;}
+	#car{width: 65px;bottom: 25%;right: 19%;}
+	#trolley{width: 69px;bottom: 28%;left: 6%;}
+	.button{width: 100%;margin-top: 20px;}
+	#copy-log-in{width: 320px;margin: 0 auto 6% auto;}
+	#button-facebook{width: 100%;height: 50px;font-size: 20px;line-height: 50px;background-size: 3%;background-position: 23% 10px;}
+}
+
+/* Desktops and laptops 2 ----------- */
+@media only screen 
+and (min-width : 1224px) 
+and (max-width : 1499px){
+
+	article{width: 42%;}
+	#hot-air-balloon{width: 52px;top: 11%;left: 16%;position: absolute;}
+	#helicopter{width: 92px;top: 13%;right: 20%;}
+	#balloon{width: 67px;top: 42%;left: 18%;}
+	#camera{width: 79px;top: 41%;right: 9%;}
+	#car{width: 65px;bottom: 25%;right: 23%;}
+	#trolley{width: 69px;bottom: 28%;left: 21%;}
+	.button{width: 100%;margin-top: 20px;}
+	#copy-log-in{width: 320px;margin: 0 auto 6% auto;}
+	#button-facebook{width: 100%;height: 50px;font-size: 20px;line-height: 50px;background-size: 3%;background-position: 23% 10px;}
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1500px) {
+
+	article{ width: 30%;}
+	#hot-air-balloon{width: 60px;top: 3%;left: 14%;position: absolute;}
+	#helicopter{width: 120px;top: 13%;right: 20%;}
+	#balloon{width: 80px;top: 42%;left: 18%;}
+	#camera{width: 90px;top: 41%;right: 9%;}
+	#car{width: 80px;bottom: 25%;right: 26%;}
+	#trolley{width: 80px;bottom: 28%;left: 28%;}
+	.button{width: 100%;margin-top: 20px;}
+	#copy-log-in{width: 320px;margin: 0 auto 6% auto;}
+	#button-facebook{width: 100%;height: 50px;font-size: 20px;line-height: 50px;background-size: 15px;background-position: 6% 10px;margin-bottom: 5%;}
+}

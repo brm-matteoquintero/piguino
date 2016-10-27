@@ -1,0 +1,159 @@
+article{
+	height: 100%;
+	display:table;
+	width: 100%;
+}
+
+#alert{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#hot-air-balloon{
+	position: absolute;
+}
+
+#helicopter{
+	position: absolute;
+}
+
+#balloon{
+	position: absolute;
+}
+
+#camera{
+	position: absolute;
+}
+
+#car{
+	position: absolute;
+	right: 0;
+}
+
+#trolley{
+	position: absolute;
+}
+#copy-rp-alert{display: block;margin: 0 auto;}
+
+#cream-jar{
+	opacity: 0;
+}
+
+#cream-jar img{
+	width: 100%;
+	height: initial;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 479px) {
+
+	#hashtag{width: 67%;}
+	#copy-rp-alert{width: 58%;}
+	#hot-air-balloon{width: 35px;top: 14%;left: 15%;}
+	#helicopter{width: 61px;top: 2%;right: 5%;}
+	#balloon{width: 42px;top: 42%;left: 6%;}
+	#camera{width: 49px;top: 40%;right: 2%;}
+	#car{width: 36px;bottom: 0%;right: 9%;}
+	#trolley{width: 43px;bottom: 5%;left: 4%;}
+	#header-bg{margin-top: -20px;}
+	.button{width: 53%;margin-top: 20px;}
+	#cream-jar{width: 50%;margin: 2% auto;}
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 480px) 
+and (max-width : 767px) {
+
+	#hashtag{width: 60%;}
+	#copy-rp-alert{width: 50%;}
+	#hot-air-balloon{width: 35px;top: 12%;left: 6%;}
+	#helicopter{width: 72px;top: 9%;right: 5%;}
+	#balloon{width: 47px;top: 42%;left: 8%;}
+	#camera{width: 55px;top: 39%;right: 5%;}
+	#car{width: 52px;bottom: 24%;right: 13%;}
+	#trolley{width: 51px;bottom: 21%;left: 12%;}
+	#header-bg{margin-top: -20px;}
+	.button{width: 47%;margin-top: 20px;}
+	#cream-jar{width: 44%;margin: 2% auto;}
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1023px) {
+
+	#hashtag{width: 55%;}
+	#copy-rp-alert{width: 45%;}
+	#hot-air-balloon{width: 47px;top: 10%;left: 17%;}
+	#helicopter{width: 86px;top: 9%;right: 11%;}
+	#balloon{width: 71px;top: 42%;left: 9%;}
+	#camera{width: 68px;top: 39%;right: 5%;}
+	#car{width: 66px;bottom: 28%;right: 16%;}
+	#trolley{width: 62px;bottom: 21%;left: 18%;}
+	#header-bg{margin-top: -20px;}
+	.button{width: 42%;margin-top: 20px;}
+	#cream-jar{width: 41%;margin: 2% auto;}
+
+}
+
+/* Desktops and laptops 1 ----------- */
+@media only screen 
+and (min-width : 1024px) 
+and (max-width : 1223px){
+
+	#hashtag{width: 42%;}
+	#copy-rp-alert{width: 39%;}
+	#hot-air-balloon{width: 53px;top: 10%;left: 19%;}
+	#helicopter{width: 101px;top: 12%;right: 13%;}
+	#balloon{width: 71px;top: 42%;left: 9%;}
+	#camera{width: 78px;top: 39%;right: 5%;}
+	#car{width: 68px;bottom: 26%;right: 19%;}
+	#trolley{width: 72px;bottom: 21%;left: 23%;}
+	#header-bg{margin-top: -20px;}
+	.button{width: 37%;margin-top: 20px;}
+	#cream-jar{width: 33%;margin: 2% auto;}
+
+}
+
+/* Desktops and laptops 2 ----------- */
+@media only screen 
+and (min-width : 1224px) 
+and (max-width : 1499px){
+
+	#hashtag{width: 38%;}
+	#copy-rp-alert{width: 32%;}
+	#hot-air-balloon{width: 60px;top: 3%;left: 14%;}
+	#helicopter{width: 120px;top: 13%;right: 20%;}
+	#balloon{width: 80px;top: 42%;left: 18%;}
+	#camera{width: 90px;top: 41%;right: 9%;}
+	#car{width: 80px;bottom: 25%;right: 26%;}
+	#trolley{width: 80px;bottom: 28%;left: 28%;}
+	#header-bg{margin-top: -20px;}
+	.button{width: 30%;margin-top: 20px;}
+	#cream-jar{width: 29%;margin: 2% auto;}
+	
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1500px) {
+
+	#hashtag{width: 26%;}
+	#copy-rp-alert{width: 26%;}
+	#hot-air-balloon{width: 60px;top: 3%;left: 14%;}
+	#helicopter{width: 120px;top: 13%;right: 20%;}
+	#balloon{width: 80px;top: 42%;left: 18%;}
+	#camera{width: 90px;top: 41%;right: 9%;}
+	#car{width: 80px;bottom: 25%;right: 26%;}
+	#trolley{width: 80px;bottom: 28%;left: 28%;}
+	#header-bg{margin-top: -20px;}
+	.button{width: 23%;margin-top: 20px;}
+	#cream-jar{width: 23%;margin: 2% auto;}
+
+}
+

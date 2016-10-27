@@ -1,0 +1,153 @@
+@keyframes sprite-980 {
+  from { background-position: 0px; }
+  to {background-position: -980px;}
+}
+
+@keyframes sprite-700 {
+  from { background-position: 0px; }
+  to {background-position: -700px;}
+}
+
+@keyframes sprite-698 {
+  from { background-position: 0px; }
+  to {background-position: -698px;}
+}
+
+@keyframes sprite-455 {
+  from { background-position: 0px; }
+  to {background-position: -455px;}
+}
+
+@keyframes sprite-325 {
+  from { background-position: 0px; }
+  to {background-position: -325px;}
+}
+
+@keyframes sprite-3602 {
+  from { background-position: 0px; }
+  to {background-position: -3602px;}
+}
+
+
+@-webkit-keyframes loader-rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes loader-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+@-webkit-keyframes loader-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes loader-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+
+
+@-webkit-keyframes hashtagAnim {
+  50% {
+    -webkit-transform: translate(0, 10px);
+  }
+
+  100% {
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+@-moz-keyframes hashtagAnim {
+  50% {
+    -moz-transform: translate(0, 10px);
+  }
+
+  100% {
+    -moz-transform: translate(0, 0);
+  }
+}
+
+@-o-keyframes hashtagAnim {
+  50% {
+    -o-transform: translate(0, 10px);
+  }
+
+  100% {
+    -o-transform: translate(0, 0);
+  }
+}
+
+@-ms-keyframes hashtagAnim {
+  50% {
+    -ms-transform: translate(0, 10px);
+  }
+
+  100% {
+    -ms-transform: translate(0, 0);
+  }
+}
+
+@keyframes hashtagAnim {
+  50% {
+    -webkit-transform: translate(0, 10px);
+  }
+
+  100% {
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+
+@-webkit-keyframes travel-recipe {
+  from { left: 0;     }
+  to   { left: 140px; }
+}
+
+@-webkit-keyframes bounce-recipe {
+  from, to  {
+    bottom: 0;
+    -webkit-animation-timing-function: ease-out;
+  }
+  50% {
+    bottom: 120px;
+    -webkit-animation-timing-function: ease-in;
+  }
+}
+
+@-webkit-keyframes spin-recipe {
+  from {                                     }
+  to   { -webkit-transform: rotateZ(360deg); }
+}
+
+@keyframes travel-recipe {
+  from { left: 0;     }
+  to   { left: 140px; }
+}
+
+@keyframes bounce-recipe {
+  from, to  {
+    bottom: 0;
+    animation-timing-function: ease-out;
+  }
+  50% {
+    bottom: 120px;
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes spin-recipe {
+  from {
+    -moz-transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

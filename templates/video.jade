@@ -1,0 +1,23 @@
+include master/general/doctype.jade
+	include master/general/head.jade
+		link(rel='stylesheet', href='css/changing-box.css')
+		link(rel='stylesheet', href='css/video.css')
+	body.white
+		include master/general/message.jade
+		include master/general/header.jade
+		section
+			article
+				#title {#$nombre#}
+				video(id="video")
+					source(type="video/mp4") 
+				#shadows
+					#shadow-top
+					#shadow-left
+					#shadow-right
+				.button#go-recipes COMPARTIR RECETA
+				.button#go-recipes DESBLOQUEA MÁS RECETAS
+		include master/general/footer.jade
+		include master/general/scripts.jade
+		script(src='js/lsc.js')
+		script(src='js/video.js')
+		script(src='js/registroFb.js')

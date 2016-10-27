@@ -1,0 +1,15 @@
+nav.menu.menu-iris
+  ul.menu-list
+    li.menu-item.menu-item-current
+      a.menu-link(href='/') Recetas
+    |{#if $logueo=='Si'#}
+    li.menu-item
+      a.menu-link(href='perfil') Perfil
+    li.menu-item
+      a.menu-link(href='logout') Cerrar Sesión
+    |{#else#}
+    li.menu-item
+      a.menu-link(href='registro') Registro
+    li.menu-item
+      a.menu-link(href='login') Ingresar
+    |{#/if#}

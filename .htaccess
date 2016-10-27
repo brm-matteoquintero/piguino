@@ -1,0 +1,220 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+##Ruta base
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+#url amigables
+RewriteRule ^([^\.]+)/?$ $1.php [NC,L]
+# Protect files and directories from prying eyes.
+<FilesMatch "\.(engine|inc|info|install|make|module|profile|test|po|sh|.*sql|theme|tpl(\.php)?|xtmpl)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^(\..*|Entries.*|Repository|Root|Tag|Template)$|^#.*#$|\.php(~|\.sw[op]|\.bak|\.orig\.save)$">
+  Order allow,deny
+</FilesMatch>
+# Don't show directory listings for URLs which map to a directory.
+Options -Indexes
+
+
+Header set Strict-Transport-Security "max-age=1800"
+
+#PREVENT X-FRAME
+ ##Inicio xss
+# Turn on IE8-IE9 XSS prevention tools
+Header set X-XSS-Protection "1; mode=block"
+# Don't allow any pages to be framed - Defends against CSRF
+Header always append X-Frame-Options SAMEORIGIN
+# prevent mime based attacks
+Header set X-Content-Type-Options: "nosniff"
+# Only allow JavaScript from the same domain to be run.
+ # Don't allow inline JavaScript to run.
+  Header set X-Content-Security-Policy "allow 'self';"
+
+  
+
+  ##Fin XSS
+
+RewriteCond %{HTTP_USER_AGENT} ^$ [OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^(-|\.|') [OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^(.*)(<|>|%3C|%3E)(.*) [NC,OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^(java|curl|wget)(.*) [NC,OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^(.*)(libwww-perl|libwwwperl|snoopy|curl|wget|winhttp|python|nikto|scan|clshttp|archiver|loader|email|harvest|fetch|extract|grab|miner|suck|reaper|leach)(.*) [NC,OR]  
+     
+  RewriteCond %{REQUEST_URI} ^(/,|/;|/<|/>|/'|/`|/%2C|/%3C|/%3E|/%27|/////) [NC,OR]  
+  RewriteCond %{HTTP_REFERER} ^(.*)(%00|%08|%09|%0A|%0B|%0C|%0D|%0E|%0F|%2C|<|>|'|%3C|%3E|%26%23|%27|%60)(.*) [NC,OR]  
+  RewriteCond %{QUERY_STRING} ^(.*)(%00|%08|%09|%0A|%0B|%0C|%0D|%0E|%0F|%2C|%3C|%3E|%27|%26%23|%60)(.*) [NC,OR]  
+  RewriteCond %{QUERY_STRING} ^(.*)('|-|<|>|,|/|\\|\.a|\.c|\.t|\.d|\.p|\.i|\.e|\.j)(.*) [NC,OR]  
+  RewriteCond %{HTTP_COOKIE} ^(.*)(<|>|'|%3C|%3E|%27)(.*) [NC]
+
+# Set the default handler.
+DirectoryIndex index.php index.html index.htm
+
+# Override PHP settings that cannot be changed at runtime. See
+# sites/default/default.settings.php and drupal_environment_initialize() in
+# includes/bootstrap.inc for settings that can be changed at runtime.
+
+# PHP 5, Apache 1 and 2.
+<IfModule mod_php5.c>
+  php_flag magic_quotes_gpc                 off
+  php_flag magic_quotes_sybase              off
+  php_flag register_globals                 off
+  php_flag session.auto_start               off
+  php_value mbstring.http_input             pass
+  php_value mbstring.http_output            pass
+  php_flag mbstring.encoding_translation    off
+   # supress php errors
+  php_flag display_startup_errors off
+  php_flag display_errors off
+  php_flag html_errors off
+  php_value docref_root 0
+  php_value docref_ext 0
+  #php_value session.gc_maxlifetime 120000
+  php_value session.cookie_lifetime 0
+  php_flag session.cookie_httponly on
+  php_flag session.use_only_cookies on  
+  php_flag session.cookie_secure on
+  php_flag session.cookie_domain off
+</IfModule>
+
+#sql injection
+  
+  # Prevent use of specified methods in HTTP Request 
+  RewriteCond %{REQUEST_METHOD} ^(HEAD|TRACE|DELETE|TRACK) [NC,OR] 
+  # Block out use of illegal or unsafe characters in the HTTP Request 
+  RewriteCond %{THE_REQUEST} ^.*(\\r|\\n|%0A|%0D).* [NC,OR] 
+  # Block out use of illegal or unsafe characters in the Referer Variable of the HTTP Request 
+  RewriteCond %{HTTP_REFERER} ^(.*)(<|>|'|%0A|%0D|%27|%3C|%3E|%00).* [NC,OR] 
+  # Block out use of illegal or unsafe characters in any cookie associated with the HTTP Request 
+  RewriteCond %{HTTP_COOKIE} ^.*(<|>|'|%0A|%0D|%27|%3C|%3E|%00).* [NC,OR] 
+  # Block out use of illegal characters in URI or use of malformed URI 
+  RewriteCond %{REQUEST_URI} ^/(,|;|:|<|>|">|"<|/|\\\.\.\\).{0,9999}.* [NC,OR]  
+  # Block out  use of illegal or unsafe characters in the Query String variable 
+  RewriteCond %{QUERY_STRING} ^.*(<|>|'|%0A|%0D|%27|%3C|%3E|%00).* [NC]
+
+  #RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|drop|delete|update|cast|create|char|convert|alter|declare|order|script|set|md5|benchmark|encode) [NC,OR]
+  
+  ########## Begin - File injection protection
+  RewriteCond %{REQUEST_METHOD} GET
+  RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=http:// [OR]
+  RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(\.\.//?)+ [OR]
+  RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=/([a-z0-9_.]//?)+ [NC]
+ 
+  
+
+  RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=http%3A%2F%2F [OR]
+
+  # PHP-CGI Vulnerability
+  RewriteCond %{QUERY_STRING} ^(%2d|\-)[^=]+$ [NC]
+  RewriteRule (.*) - [F,L]
+
+  ########## End - File injection protection
+
+
+
+
+  # Block MySQL injections, RFI, base64, etc.
+  
+  RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=http:// [OR]
+  
+  RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(\.\.//?)+ [OR]
+  
+  RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=/([a-z0-9_.]//?)+ [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} \=PHP[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} (\.\./|\.\.) [OR]
+  
+  RewriteCond %{QUERY_STRING} ftp\: [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} http\: [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} https\: [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} \=\|w\| [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} ^(.*)/self/(.*)$ [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} ^(.*)cPath=http://(.*)$ [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} (<|%3C)([^i]*i)+frame.*(>|%3E) [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} base64_(en|de)code[^(]*\([^)]*\) [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+  
+  RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+  
+  RewriteCond %{QUERY_STRING} ^.*(\[|\]|\(|\)|<|>).* [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} (NULL|OUTFILE|LOAD_FILE) [OR]
+  
+  RewriteCond %{QUERY_STRING} (\./|\../|\.../)+(motd|etc|bin) [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} (localhost|loopback|127\.0\.0\.1) [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
+
+  RewriteCond %{QUERY_STRING} (waitfor|delay|shutdown).*(nowait) [NC,OR]
+
+  RewriteCond %{QUERY_STRING} (union|and|\^).*(select).*(ascii\(|bin\(|benchmark\(|cast\(|char\(|sleep\(|charset\(|collation\(|concat\(|concat_ws\(|table_schema) [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} concat[^\(]*\( [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} union([^s]*s)+elect [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} union([^a]*a)+ll([^s]*s)+elect [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|drop|delete|update|cast|create|char|convert|alter|declare|order|script|set|md5|benchmark|encode) [NC,OR]
+  
+  RewriteCond %{QUERY_STRING} (sp_executesql) [NC]
+
+   # Evitar escaneos y cualquier intento de manipulación malintencionada  
+  # de la URL. Con esta regla es imposible lanzar ataques de inyección (SQL, XSS, etc)
+  
+  RewriteCond %{HTTP_USER_AGENT} ^$ [OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^(-|\.|') [OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^(.*)(<|>|%3C|%3E)(.*) [NC,OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^(java|curl|wget)(.*) [NC,OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^(.*)(libwww-perl|libwwwperl|snoopy|curl|wget|winhttp|python|nikto|scan|clshttp|archiver|loader|email|harvest|fetch|extract|grab|miner|suck|reaper|leach)(.*) [NC,OR]  
+     
+  RewriteCond %{REQUEST_URI} ^(/,|/;|/<|/>|/'|/`|/%2C|/%3C|/%3E|/%27|/////) [NC,OR]  
+  RewriteCond %{HTTP_REFERER} ^(.*)(%00|%08|%09|%0A|%0B|%0C|%0D|%0E|%0F|%2C|<|>|'|%3C|%3E|%26%23|%27|%60)(.*) [NC,OR]  
+  RewriteCond %{QUERY_STRING} ^(.*)(%00|%08|%09|%0A|%0B|%0C|%0D|%0E|%0F|%2C|%3C|%3E|%27|%26%23|%60)(.*) [NC,OR]  
+  RewriteCond %{QUERY_STRING} ^(.*)('|-|<|>|,|/|\\|\.a|\.c|\.t|\.d|\.p|\.i|\.e|\.j)(.*) [NC,OR]  
+  RewriteCond %{HTTP_COOKIE} ^(.*)(<|>|'|%3C|%3E|%27)(.*) [NC]
+  
+  ## Denegar el acceso a robots dañinos, browsers offline, etc  
+  RewriteCond %{HTTP_USER_AGENT} ^Anarchie [OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^ASPSeek [OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^attach [OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^autoemailspider [OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^Xenu [OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^Zeus.*Webster [OR]  
+  RewriteCond %{HTTP_USER_AGENT} ^Zeus  
+  ##redireccionar a los robots a otra web  
+  RewriteRule ^.*$ http://corporativa.nestle.com.co [R,L]
+
+# Protegerse contra los ataques DOS limitando el tamaño de subida de archivos  
+LimitRequestBody 1024000
+
+  #fin sql
+ 
+
+# 5G:[USER AGENTS]
+<IfModule mod_setenvif.c>
+    # SetEnvIfNoCase User-Agent ^$ keep_out
+    SetEnvIfNoCase User-Agent (binlar|casper|cmsworldmap|comodo|diavol|dotbot|feedfinder|flicky|ia_archiver|jakarta|kmccrew|nutch|planetwork|purebot|pycurl|skygrid|sucker|turnit|vikspider|zmeu) keep_out
+    <limit GET POST PUT>
+  Order Allow,Deny
+  Allow from all
+  Deny from env=keep_out
+    </limit>
+</IfModule>

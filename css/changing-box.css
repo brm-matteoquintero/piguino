@@ -1,0 +1,36 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-width: 479px) and (min-width: 320px) {
+	body{overflow-y: hidden;}
+	article{width: 100%;padding-top: 7%;}
+	article.mobile{width: 100%;padding-top: 27%;}
+	article.mobile .box{ height: 85%; }
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 480px) 
+and (max-width : 767px) {
+	article{width: 100%;padding-top: 7%;}
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1023px) {
+	article{width: 100%;padding-top: 7%;}
+}
+/* Desktops and laptops 1 ----------- */
+@media only screen 
+and (min-width : 1024px) 
+and (max-width : 1223px){
+	article{width: 100%;padding-top: 7%;}
+}
+/* Desktops and laptops 2 ----------- */
+@media only screen 
+and (min-width : 1224px) 
+and (max-width : 1499px){
+	article{width: 70%;padding-top: 4%;}
+}
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1500px) {
+	article{width: 57%;padding-top: 4%;}
+}	
