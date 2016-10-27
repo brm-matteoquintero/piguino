@@ -54,7 +54,7 @@ $(document).ready(function(){
 
 	$('#plans-close').click(function(){
 	  $("#copy-up-synchronize, #copy-steps-synchronize, #info").show();
-	  $("# ").hide();
+	  $("#plans").hide();
 	});
 
 
@@ -126,7 +126,7 @@ function nextinteractions(){
 function getactionjson(idRecipe){
 	var getjson;
 	$.ajaxSetup({ async: false });
-	$.getJSON( "js/actions.json?444", function( data ) {
+	$.getJSON( "js/actions.json", function( data ) {
 		getjson = data[idRecipe].action;
 	});
 	return getjson;
