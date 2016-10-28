@@ -24,7 +24,7 @@ include master/general/doctype.jade
 								.button compartir
 						#plans-text-container
 							#plans-text
-								include master/plans/1.jade
+								{#include file="master/plans/$id.html"#}
 					include master/svg/copy-up-synchronize.jade
 					include master/svg/copy-steps-synchronize.jade
 					#shadows
@@ -43,11 +43,13 @@ include master/general/doctype.jade
 							include master/svg/icon-mobile-synchronize-2.jade
 				#box-action(class="box")
 					#message-canvas
-						strong
-						p
+						span
+							strong
+							p
 						button#next-canvas Continuar
 					#steps-action.action-helpers
-					include master/svg/title-video.jade
+					#title-video.action-helpers
+						{#include file="master/title/$id.svg"#}
 					#bg-distort
 					#shadows
 						#shadow-top
@@ -56,7 +58,7 @@ include master/general/doctype.jade
 				#desktop-mobile-area
 					#steps-action
 					span Área sensible
-				#action
+				#action.action-helpers
 					.sprite
 					span#action-text
 		include master/general/footer.jade

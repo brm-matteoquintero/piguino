@@ -325,6 +325,7 @@ var Preloader = (function(){
 				bgbox.id = "bgbox";
 				bgbox.style.zIndex = 40;
 				document.getElementById("box-action").appendChild(bgbox);
+				$("#message-canvas").show();
 
 				if (config.progressMode == "circle"){
 						progress = document.createElement('div');
@@ -375,6 +376,7 @@ var Preloader = (function(){
 
 		function removeProgress(){
 				if (progress) {
+						$("#message-canvas button").show();
 						progress = null;
 				}
 		}

@@ -4,7 +4,7 @@ article{
 	position: relative;
 }
 
-#title-video{
+#title-video svg{
 	display: block;
 	margin: 0 auto;
 	z-index: 50;
@@ -113,6 +113,7 @@ article{
 	text-align: center;
 	color: #fff;
 	font-family: stick;
+	line-height: 28px;
 }
 
 #code-mobile:focus{
@@ -148,7 +149,6 @@ canvas{
 	z-index: 45;
 }
 #steps-action .step{
-	background-image: url(../img/steps-lock-unlock.png);
 	width: 60px;
 	height: 60px;
 	background-size: cover;
@@ -156,8 +156,26 @@ canvas{
 	position: relative;
 	display: block;
 }
+
+#steps-action .step.unlock{
+	background-image: url(../img/steps-unlock.png);
+}
+
+#steps-action .step.active{
+	background-image: url(../img/steps-active.png);
+}
+
+#steps-action .step.deactivated{
+	background-image: url(../img/steps-deactivated.png);
+	opacity: 0.8;
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
+}
+
 #steps-action .step span{
-	color: #fff;
 	font-family: stick;
 	letter-spacing: 1px;
 	text-align: center;
@@ -165,17 +183,33 @@ canvas{
 	position: absolute;
 	top: -19%;
 	left: 26%;
-	background-color: #e42e27;
 	border-radius: 5px;
 	padding: 2% 8%;
 }
+
+#steps-action .step.deactivated span{
+	color: #e42e27;
+	background-color: #ffffff;
+}
+
+#steps-action .step.active span{
+	color: #ffffff;
+	background-color: #7b0a08;
+}
+
+#steps-action .step.unlock span{
+	color: #ffffff;
+	background-color: #e53228;
+}
+
+
 
 #steps-action .step.lock{
 	background-position: 0 0;
 }
 
 #steps-action .step.unlock{
-	background-position: 62px 0;
+	background-position: 60px 0;
 }
 
 #steps-synchronize{
@@ -350,13 +384,15 @@ canvas{
 }
 
 #plans-text ul li:before {
-    content: "â– ";
-    color: #e53027;
-    height: 100%;
+    content: "";
+    height: 15px;
     position: relative;
     width: 20px;
     display: table-cell;
     float: left;
+    background: rgba(230, 42, 54, 0.79);
+    margin-right: 15px;
+    border-radius: 20px;
 }
 
 #plans-image-copy{
@@ -421,7 +457,7 @@ canvas{
 	
 }
 
-#title-video text{
+#title-video svg text{
 	font-family: stick;
 	font-size: 21px;
 	letter-spacing: 1px;
@@ -433,24 +469,30 @@ canvas{
 	right:0;
 }
 
-#message-canvas{}
+#message-canvas{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 41;
+}
 
 #message-canvas span{
 	color: #e42e27;
 	font-size: 45px;
-	top: 17%;
+	margin: 25% auto  0  auto;
 	font-family: stick;
 	letter-spacing: 8px;
-	display: block;
 	width: 90%;
 	text-align: center;
-	margin: 0 auto;
 	position: relative;
+	display: block;
 }
 
-#message-canvas strong{font-size: 46px;letter-spacing: -1px;}
+#message-canvas strong{font-size: 46px;letter-spacing: 1px;}
 
 #message-canvas p{color: #6d6d6d;line-height: 25px;font-size: 25px;}
+
+#message-canvas button{position: relative;width: 40%;border: 0;color: #fff;font-family: stick;background-color: #e53027;height: 50px;font-size: 22px;letter-spacing: 9px;display: block;margin: 4% auto 0 auto;left: 30%;cursor: pointer;}
 
 #copy-steps-synchronize,
 #steps-synchronize,
@@ -461,9 +503,9 @@ canvas{
 #qr-code,
 .action-helpers,
 #synchronize a,
-#action,
-#message-canvas{
-	 display: none; 
+#message-canvas,
+#message-canvas button{
+	 display: none;
 }
 
 
@@ -485,7 +527,7 @@ canvas{
 	#icon-desktop-synchronize-2{width: 36%;top: 1%;right: 34%;}
 	#icon-mobile-synchronize,#icon-desktop-synchronize{display: none;}
 	#steps-synchronize{width: 96%;left: 2%;top: 32%;}
-	#title-video{width: 70%;left: 15%;top: -11%;}
+	#title-video svg{width: 70%;left: 15%;top: -11%;}
 	#play-video{width: 16%;top: 35%;left: 42%;}
 	#share-video{width: 380px;left: calc(50% - 190px);bottom: 5%;}
 	#action{width: 210px;bottom: -86px;left: calc(50% - 105px);height: 200px;}
@@ -509,7 +551,7 @@ canvas{
 	#icon-desktop-synchronize-2{width: 30%;top: 1%;right: 35%;}
 	#icon-mobile-synchronize,#icon-desktop-synchronize{display: none;}
 	#steps-synchronize{width: 96%;left: 2%;top: 32%;}
-	#title-video{width: 50%;left: 25%;top: -7%;}
+	#title-video svg{width: 50%;left: 25%;top: -7%;}
 	#play-video{width: 16%;top: 35%;left: 42%;}
 	#share-video{width: 380px;left: calc(50% - 190px);bottom: 5%;}
 	#action{width: 350px;bottom: -163px;left: calc(50% - 175px);height: 350px;}
@@ -524,7 +566,7 @@ canvas{
 	#icon-desktop-synchronize-2{width: 64%;top: 29%;right: 21%;}
 	#icon-mobile-synchronize{width: 50%;top: 30%;left: 25%;}
 	#icon-desktop-synchronize{width: 45%;top: 29%;right: 27%;}
-	#title-video{width: 50%;left: 25%;top: -7%;}
+	#title-video svg{width: 50%;left: 25%;top: -7%;}
 	#play-video{width: 16%;top: 35%;left: 42%;}
 	#share-video{width: 380px;left: calc(50% - 190px);bottom: 5%;}
 	#action{width: 350px;bottom: -163px;left: calc(50% - 175px);height: 350px;}
@@ -538,7 +580,7 @@ canvas{
 	#icon-mobile-synchronize-2,#icon-desktop-synchronize-2{display: none;}
 	#icon-mobile-synchronize{width: 46%;top: 27%;left: 27%;}
 	#icon-desktop-synchronize{width: 40%;top: 25%;right: 30%;}
-	#title-video{width: 50%;left: 25%;top: -7%;}
+	#title-video svg{width: 50%;left: 25%;top: -7%;}
 	#play-video{width: 16%;top: 35%;left: 42%;}
 	#share-video{width: 380px;left: calc(50% - 190px);bottom: 5%;}
 	#action{width: 400px;bottom: -190px;left: calc(50% - 200px);height: 400px;}
@@ -554,7 +596,7 @@ canvas{
 	#icon-mobile-synchronize-2,#icon-desktop-synchronize-2{display: none;}
 	#icon-mobile-synchronize{width: 50%;top: 30%;left: 25%;}
 	#icon-desktop-synchronize{width: 45%;top: 29%;right: 27%;}
-	#title-video{width: 50%;left: 25%;top: -7%;}
+	#title-video svg{width: 70%;left: 15%;top: -10%;}
 	#play-video{width: 16%;top: 35%;left: 42%;}
 	#share-video{width: 380px;left: calc(50% - 190px);bottom: 5%;}
 	#action{width: 400px;bottom: -195px;left: calc(50% - 200px);height: 400px;}
@@ -570,7 +612,7 @@ canvas{
 	#icon-mobile-synchronize-2,#icon-desktop-synchronize-2{display: none;}
 	#icon-mobile-synchronize{width: 50%;top: 30%;left: 25%;}
 	#icon-desktop-synchronize{width: 45%;top: 29%;right: 27%;}
-	#title-video{width: 50%;left: 25%;top: -7%;}
+	#title-video svg{width: 50%;left: 25%;top: -7%;}
 	#play-video{width: 16%;top: 35%;left: 42%;}
 	#share-video{width: 380px;left: calc(50% - 190px);bottom: 5%;}
 	#action{width: 500px;bottom: -232px;left: calc(50% - 250px);height: 500px;}

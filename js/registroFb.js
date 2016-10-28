@@ -147,13 +147,12 @@ top.location.href = self.location.href;
     /*validacion de formulario de fiesta*/
 
 if(jQuery("#login").length>0){
+
+ showerrors(jQuery('#login'));
+	
     $("#login").validate({
 
          debug: false,
-
-        /*Contenedor y clase donde se pinta el error*/
-        errorElement: "div",
-        errorClass: "alert-danger",
 
         /*Campos para validar en form para pedir fiesta*/
 
@@ -175,15 +174,6 @@ if(jQuery("#login").length>0){
        
 
              },
-
-      errorPlacement: function (error, element) {
-
-          error.insertAfter(element);
-   
-
-      },
-
-      
 
   });
 }

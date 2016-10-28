@@ -252,7 +252,7 @@ body.gray::before{
 .sprite{
 	position: relative;
 	display: block;
-	margin: 3% auto 0 auto;
+	margin: 0 auto 0 auto;
 }
 
 #tap-red{

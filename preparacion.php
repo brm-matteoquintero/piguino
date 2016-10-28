@@ -9,7 +9,9 @@ if(isset($_COOKIE['ywd_vid']) && $_COOKIE['ywd_vid']!=''){
    $recetas=$registro->recetasPingD($idRect);
    //printVar($recetas);
    $nombre=$recetas[0]->nombre;
+   $id=$recetas[0]->id;
    $smarty->assign('nombre',$nombre);
+	 $smarty->assign("id",$id);
    $smarty->display("synchronize.html");
 }else{
     header('location : /planpinguino/');

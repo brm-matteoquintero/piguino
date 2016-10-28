@@ -15,7 +15,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo izquierda a derecha",
-						"desktop":"Mover mouse izquierda a derecha"
+						"desktop":"Mover mouse de izquierda a derecha"
 					},
 					"sprite":{
 						"mobiledesktop":"swipe-x-red",
@@ -35,7 +35,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo izquierda a derecha",
-						"desktop":"Mover mouse izquierda a derecha"
+						"desktop":"Mover mouse de izquierda a derecha"
 					},
 					"sprite":{
 						"mobiledesktop":"rotate-red",
@@ -55,7 +55,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo arriba a abajo",
-						"desktop":"Mover mouse arriba a abajo"
+						"desktop":"Mover mouse de arriba a abajo"
 					},
 					"sprite":{
 						"mobiledesktop":"swipe-y-red",
@@ -81,7 +81,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo izquierda a derecha",
-						"desktop":"Mover mouse izquierda a derecha"
+						"desktop":"Mover mouse de izquierda a derecha"
 					},
 					"sprite":{
 						"mobiledesktop":"tap-red",
@@ -102,7 +102,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo arriba a abajo",
-						"desktop":"Mover mouse arriba a abajo"
+						"desktop":"Mover mouse de arriba a abajo"
 					},
 					"sprite":{
 						"mobiledesktop":"double-tap-red",
@@ -122,7 +122,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo izquierda a derecha",
-						"desktop":"Mover mouse izquierda a derecha"
+						"desktop":"Mover mouse de izquierda a derecha"
 					},
 					"sprite":{
 						"mobiledesktop":"swipe-x-red",
@@ -148,7 +148,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo izquierda a derecha",
-						"desktop":"Mover mouse izquierda a derecha"
+						"desktop":"Mover mouse de izquierda a derecha"
 					},
 					"sprite":{
 						"mobiledesktop":"double-tap-red",
@@ -168,7 +168,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo arriba a abajo",
-						"desktop":"Mover mouse arriba a abajo"
+						"desktop":"Mover mouse de arriba a abajo"
 					},
 					"sprite":{
 						"mobiledesktop":"swipe-y-red",
@@ -188,7 +188,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo izquierda a derecha",
-						"desktop":"Mover mouse izquierda a derecha"
+						"desktop":"Mover mouse de izquierda a derecha"
 					},
 					"sprite":{
 						"mobiledesktop":"rotate-x-red",
@@ -214,7 +214,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo izquierda a derecha",
-						"desktop":"Mover mouse izquierda a derecha"
+						"desktop":"Mover mouse de izquierda a derecha"
 					},
 					"sprite":{
 						"mobiledesktop":"swipe-x-red",
@@ -234,7 +234,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo izquierda a derecha",
-						"desktop":"Mover mouse izquierda a derecha"
+						"desktop":"Mover mouse de izquierda a derecha"
 					},
 					"sprite":{
 						"mobiledesktop":"double-tap-red",
@@ -254,7 +254,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo arriba a abajo",
-						"desktop":"Mover mouse arriba a abajo"
+						"desktop":"Mover mouse de arriba a abajo"
 					},
 					"sprite":{
 						"mobiledesktop":"swipe-y-red",
@@ -281,7 +281,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo arriba a abajo",
-						"desktop":"Mover mouse arriba a abajo"
+						"desktop":"Mover mouse de arriba a abajo"
 					},
 					"sprite":{
 						"mobiledesktop":"swipe-y-red",
@@ -301,7 +301,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo izquierda a derecha",
-						"desktop":"Mover mouse izquierda a derecha"
+						"desktop":"Mover mouse de izquierda a derecha"
 					},
 					"sprite":{
 						"mobiledesktop":"swipe-x-red",
@@ -321,7 +321,7 @@
 					"playmode":"mouse",
 					"text":{
 						"mobile":"Desliza tu dedo izquierda a derecha",
-						"desktop":"Mover mouse izquierda a derecha"
+						"desktop":"Mover mouse de izquierda a derecha"
 					},
 					"sprite":{
 						"mobiledesktop":"tap-red",

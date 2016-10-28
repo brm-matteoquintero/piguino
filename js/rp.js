@@ -10,16 +10,10 @@ function animatedhideelements(){
 jQuery(document).ready(function(){
 
 	
+ showerrors(jQuery('#remember'));
 
   //Validación de campos
   jQuery('#remember').validate({
-  
-    //por defecto es false
-    // debug:true,
-  
-    //Contenedor y clase donde se pinta el error
-    errorElement: "div",
-    errorClass: "mensaje",
   
     //Campos a validar
     rules:{
@@ -29,27 +23,10 @@ jQuery(document).ready(function(){
       }
       
     },
-  
     //Mensaje de error cuando no cumple la regla
     messages:{
       email: {required: 'Por favor ingrese un e-mail', email:'Ingrese un e-mail con formato v&aacute;lido',},
      },
-  
-    //ubicación del mensaje de error
-  
-    errorPlacement: function (error, element) {       
-  
-        if( element.attr('name') == 'check'){
-
-          error.insertAfter(element.next());
-
-        }else{
-
-          error.insertAfter(element);
-        }
-      
-  
-    }
   
   });
 
