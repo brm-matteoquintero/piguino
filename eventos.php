@@ -42,7 +42,7 @@ switch ($vrtCtr) {
 			$registrar->mailC($campos);
 			if($registrar>0){
 				$para  = $mandaM[0]->email;
-				$urlEnvio="https://fbapp.brm.com.co/fbappPinguino/validaMailPass.php?".$datoCookie;
+				$urlEnvio="http://www.heladospinguino.com.ec/planpinguino/?".$datoCookie;
 				$asunto = 'Mensaje de recuperación';
 				$mensaje= "Hola, soy un mensaje, por favor de click en el link adjunto ". $urlEnvio ;
 		
@@ -99,7 +99,7 @@ switch ($vrtCtr) {
 			$campos['nombre']=utf8_decode($varPost['nombre']);
 			$campos['apellido']=utf8_decode($varPost['apellido']);
 			$campos['email']=strtolower($varPost['email']);
-			$campos['provincia']=utf8_decode($varPost['provincia']);
+			//$campos['provincia']=utf8_decode($varPost['provincia']);
 			$campos['ciudad']=utf8_decode($varPost['ciudad']);
 			$campos['lepass']=base64_encode($varPost['lepas']);
 			$campos['aceptar']=$varPost['aceptar'];
@@ -163,7 +163,7 @@ switch ($vrtCtr) {
 				$campos['nombre']=utf8_decode($varPost['nombre']);
 				$campos['apellido']=utf8_decode($varPost['apellido']);
 				$campos['email']=strtolower($varPost['email']);
-				$campos['provincia']=utf8_decode($varPost['provincia']);
+				//$campos['provincia']=utf8_decode($varPost['provincia']);
 				$campos['ciudad']=utf8_decode($varPost['ciudad']);
 				$campos['lepass']=base64_encode($varPost['lepas']);
 				$campos['idR']=$varPost['idR'];

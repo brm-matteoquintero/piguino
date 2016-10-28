@@ -24,8 +24,8 @@ include master/general/doctype.jade
 						label(for="name") Email
 						input(type="email" id="email" name="email" tabindex="3" value="{#$email#}")
 
-						label(for="name") Provincia
-						input(type="text" id="provincia" name="provincia" tabindex="5" value="{#$provincia#}")
+						label(for="name") Contraseña
+						input(type="password" id="lepas" name="lepas" tabindex="5" value="{#$pwd#}")
 
 					.goup-right
 						label(for="name") Apellidos
@@ -34,12 +34,11 @@ include master/general/doctype.jade
 						label(for="name") Ciudad
 						input(type="text" id="ciudad" name="ciudad" tabindex="4" value="{#$ciudad#}")
 
-						label(for="name") Contraseña
-						input(type="password" id="lepas" name="lepas" abindex="6" value="{#$pwd#}")
+						label(for="name") Confirma tu contraseña
+						input(type="password" id="lepasc" name="lepasc" tabindex="6" value="{#$pwd#}")
 
 					.goup-middle
-						label(for="name") Confirma tu contraseña
-						input(type="password" id="lepasc" name="lepasc" tabindex="7" value="{#$pwd#}")
+						
 						.button(id="volver") volver
 						.button(id="updateP") confirmar
 		include master/general/footer.jade

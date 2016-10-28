@@ -12,6 +12,6 @@ if(isset($_COOKIE['ywd_vid']) && $_COOKIE['ywd_vid']!=''){
    $smarty->assign('nombre',$nombre);
    $smarty->display("synchronize.html");
 }else{
-    header('location : /');
+    header('location : /planpinguino/');
 }
 ?>

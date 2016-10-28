@@ -8,7 +8,7 @@ class Registro {
 		$inscr ->nombre = $campos['nombre'];
 		$inscr ->apellido = $campos['apellido'];
 		$inscr ->email = $campos['email'];
-		$inscr ->provincia = $campos['provincia'];
+		//$inscr ->provincia = $campos['provincia'];
 		$inscr ->ciudad = $campos['ciudad'];
 		$inscr ->contrasena = $campos['lepass'];
 		$inscr ->activo = $campos['aceptar'];
@@ -85,7 +85,7 @@ class Registro {
 		//DB_DataObject::debugLevel(1);
 		$perfil=DB_DataObject::Factory('TbUsuario');
 		$perfil->selectAdd();
-		$perfil->selectAdd('id,email,nombre,apellido,provincia,ciudad,contrasena,idFacebook');
+		$perfil->selectAdd('id,email,nombre,apellido,ciudad,contrasena,idFacebook');
 		$perfil->whereAdd('id="'.$id.'"');
 		$perfil->find();
 		$count=0;
@@ -95,7 +95,7 @@ class Registro {
 			$pef[$count]->email=$perfil->email;
 			$pef[$count]->nombre=$perfil->nombre;
 			$pef[$count]->apellido=$perfil->apellido;
-			$pef[$count]->provincia=$perfil->provincia;
+			//$pef[$count]->provincia=$perfil->provincia;
 			$pef[$count]->ciudad=$perfil->ciudad;
 			$pef[$count]->contrasena=$perfil->contrasena;
 			$pef[$count]->idFacebook=$perfil->idFacebook;
@@ -158,7 +158,7 @@ class Registro {
 		$inscr ->nombre = $campos['nombre'];
 		$inscr ->apellido = $campos['apellido'];
 		$inscr ->email = $campos['email'];
-		$inscr ->provincia = $campos['provincia'];
+		//$inscr ->provincia = $campos['provincia'];
 		$inscr ->ciudad = $campos['ciudad'];
 		$inscr ->contrasena = $campos['lepass'];
 		$inscr ->idFacebook = $campos['idR'];

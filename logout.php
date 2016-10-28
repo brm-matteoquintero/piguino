@@ -6,5 +6,5 @@ foreach ($_COOKIE as $key => $value) {
     setcookie($key, null, time() - 3600,'/');
 }
 
-header('location: /');
+header('location: /planpinguino/');
 ?>
