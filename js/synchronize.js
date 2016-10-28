@@ -86,16 +86,31 @@ function initializeactions(idRecipe){
 	} 
 }
 // Muestra alerta con mensaje
+function showmessage(title,message,callback,time,type){
+
+	switch(type){
+		case "canvas":
+
+		break;
+		case "over":
+
+			$("#content-message").show();
+			$("#content-message span").html(message);
+			setTimeout(function(){ 
+				$("#content-message").hide();
+				$("#content-message span").html("");
+				if (callback!=null || callback!=undefined) {
+					callback(); 
+				}
+			},time)
+
+		break;
+	}
+
+}
+
 function showmessage(message,callback,time){
-	$("#content-message").show();
-	$("#content-message span").html(message);
-	setTimeout(function(){ 
-		$("#content-message").hide();
-		$("#content-message span").html("");
-		if (callback!=null || callback!=undefined) {
-			callback(); 
-		}
-	},time)
+
 }
 
 // Suma cada interacción de una acción
@@ -248,8 +263,27 @@ function gesturesmobile(){
 	}
 }
 
+function animatedsteps(){
+
+
+	for (var i = 0; i < actionslength; i++) {
+
+		var stepaction = $("#step-"+i);
+		stepaction.addClass("animated bounce slow");
+
+	} 
+
+	/*stepaction
+	.on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+	 function(e){
+	 	stepaction.removeClass("animated bounce slow");
+	    $(this).off(e);
+	});*/
+}
+
 // Crea un nuevo canvas de la acción
 function createcanvas(){
+	animatedsteps();
 	setconfigcanvas();
 	
 	$("#box-synchronize").remove();	

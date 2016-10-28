@@ -1,6 +1,6 @@
 include master/general/doctype.jade
 	include master/general/head.jade
-		link(rel='stylesheet', href='css/recipes.css')
+		link(rel='stylesheet', href='css/recipes.css?{#$rand#}')
 	body.white
 		include master/general/message.jade
 		include master/general/header.jade
@@ -74,5 +74,5 @@ include master/general/doctype.jade
 		include master/general/footer.jade
 		include master/general/scripts.jade
 		script(src='js/vendor/mixitup.min.js')
-		script(src='js/lsc.js')
-		script(src='js/recipes.js')
+		script(src='js/lsc.js?{#$rand#}')
+		script(src='js/recipes.js?{#$rand#}')

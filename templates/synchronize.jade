@@ -1,7 +1,7 @@
 include master/general/doctype.jade
 	include master/general/head.jade
-		link(rel='stylesheet', href='css/changing-box.css')
-		link(rel='stylesheet', href='css/synchronize.css')
+		link(rel='stylesheet', href='css/changing-box.css?{#$rand#}')
+		link(rel='stylesheet', href='css/synchronize.css?{#$rand#}')
 	body.white
 		include master/general/message.jade	
 		include master/general/header.jade
@@ -42,6 +42,10 @@ include master/general/doctype.jade
 							include master/svg/icon-desktop-synchronize.jade
 							include master/svg/icon-mobile-synchronize-2.jade
 				#box-action(class="box")
+					#message-canvas
+						strong
+						p
+						button#next-canvas Continuar
 					#steps-action.action-helpers
 					include master/svg/title-video.jade
 					#bg-distort
@@ -52,7 +56,7 @@ include master/general/doctype.jade
 				#desktop-mobile-area
 					#steps-action
 					span Área sensible
-				#action.action-helpers
+				#action
 					.sprite
 					span#action-text
 		include master/general/footer.jade
@@ -61,8 +65,8 @@ include master/general/doctype.jade
 		script(type="text/javascript" src="js/vendor/sequencer.benchmark.js")
 		script(type="text/javascript" src="js/vendor/hammer.min.js")
 		//script(src='https://pinguino-julian10404.c9users.io/socket.io/socket.io.js')
-		script(src='js/eventActions.js')
-		script(src='js/lsc.js')
-		//script(src='js/clientWeb.js')
-		//script(src='js/clientCel.js')
-		script(src='js/synchronize.js')
+		script(src='js/eventActions.js?{#$rand#}')
+		script(src='js/lsc.js?{#$rand#}')
+		//script(src='js/clientWeb.js?{#$rand#}')
+		//script(src='js/clientCel.js?{#$rand#}')
+		script(src='js/synchronize.js?{#$rand#}')

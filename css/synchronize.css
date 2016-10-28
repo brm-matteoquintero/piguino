@@ -263,7 +263,7 @@ canvas{
 
 #plans{
 	width: 101%;
-	height: 101%;
+	height: 100%;
 	background: #fff;
 	z-index: 2;
 	position: absolute;
@@ -294,6 +294,8 @@ canvas{
 	float: left;
 	overflow: hidden;
 	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 #plans-text-container{
@@ -431,6 +433,25 @@ canvas{
 	right:0;
 }
 
+#message-canvas{}
+
+#message-canvas span{
+	color: #e42e27;
+	font-size: 45px;
+	top: 17%;
+	font-family: stick;
+	letter-spacing: 8px;
+	display: block;
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+}
+
+#message-canvas strong{font-size: 46px;letter-spacing: -1px;}
+
+#message-canvas p{color: #6d6d6d;line-height: 25px;font-size: 25px;}
+
 #copy-steps-synchronize,
 #steps-synchronize,
 #box-action,
@@ -439,7 +460,9 @@ canvas{
 #plans,
 #qr-code,
 .action-helpers,
-#synchronize a{
+#synchronize a,
+#action,
+#message-canvas{
 	 display: none; 
 }
 

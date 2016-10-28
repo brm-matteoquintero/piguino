@@ -316,18 +316,19 @@ var Preloader = (function(){
 		function buildProgress(config){
 
 				bgbox = document.createElement('div');
-				bgbox.style.width = "100%";
-				bgbox.style.height = "100%";
+				bgbox.style.width = "101%";
+				bgbox.style.height = "101%";
 				bgbox.style.backgroundColor = "#fff";
 				bgbox.style.position = "absolute";
-				bgbox.style.top = "0";
-				bgbox.style.left = "0";
+				bgbox.style.top = "-1px";
+				bgbox.style.left = "-1px";
 				bgbox.id = "bgbox";
 				bgbox.style.zIndex = 40;
 				document.getElementById("box-action").appendChild(bgbox);
 
 				if (config.progressMode == "circle"){
 						progress = document.createElement('div');
+						span = document.createElement('span');
 						progress.id = "progress";
 						progress.style.width = config.progressDiam + "px";
 						progress.style.height = config.progressDiam + "px";
@@ -351,6 +352,7 @@ var Preloader = (function(){
 								progress.innerHTML = p+"%";
 						}
 						document.getElementById("bgbox").appendChild(progress);
+						document.getElementById("bgbox").appendChild(span);
 						
 				} else if (config.progressMode == "bar") {
 						progress = document.createElement('div');
@@ -373,9 +375,6 @@ var Preloader = (function(){
 
 		function removeProgress(){
 				if (progress) {
-						$(".action-helpers").show();
-						document.getElementById("bgbox").removeChild(progress);
-						document.getElementById("box-action").removeChild(bgbox);
 						progress = null;
 				}
 		}

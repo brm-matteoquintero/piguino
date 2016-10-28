@@ -41,6 +41,26 @@ form p{
 	margin-bottom: 3%;
 }
 
+.form-error{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	display: none;
+}
+
+.form-error p{
+	font-family: stick;
+	color: #e62a36;
+	font-size: 23px;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	border-bottom: 0.05em solid;
+	padding-bottom: 6px;
+}
+
 form .goup-left,
 form .goup-right,
 form .goup-middle{position: relative;display: block;overflow: hidden;}
@@ -59,7 +79,7 @@ and (max-width : 479px) {
 	#trolley{width: 65px;bottom: 22%;left: 19%;display: none;}
 	.button{width: 49%;margin-top: 20px;float: left;height: auto;}
 	.button:nth-child(even){margin-right: 2%;background-color: #696969;}
-	#copy-register{width: 300px;margin: 0 auto 4% auto;}
+	#copy-register{width: 300px;margin: 0 auto 4% auto;left: calc(50% - 150px);}
 	form p{font-size: 11px;letter-spacing: 0;}
 	article{width: 93%;margin: 20% auto 19% auto;height: 100%;display: table;}
 	form .goup-left{width: 80%;margin: 0 auto;}
@@ -84,7 +104,7 @@ and (max-width : 767px) {
 	#trolley{width: 65px;bottom: 22%;left: 19%;display: none;}
 	.button{width: 49%;margin-top: 20px;float: left;}
 	.button:nth-child(even){margin-right: 2%;background-color: #696969;}
-	#copy-register{width: 340px;margin: 0 auto 4% auto;}
+	#copy-register{width: 340px;margin: 0 auto 4% auto;left: calc(50% - 170px);}
 	form p{font-size: 11px;letter-spacing: 0;}
 	article{width: 93%;margin: 8% auto 19% auto;height: 100%;display: table;}
 	form .goup-left{width: 90%;margin: 0 auto;}
@@ -108,7 +128,7 @@ and (max-width : 1023px) {
 	#trolley{width: 65px;bottom: 22%;left: 19%;}
 	.button{width: 49%;margin-top: 20px;float: left;}
 	.button:nth-child(even){margin-right: 2%;background-color: #696969;}
-	#copy-register{width: 340px;margin: 0 auto 4% auto;}
+	#copy-register{width: 340px;margin: 0 0 4% 0;left: calc(50% - 170px);}
 	form p{font-size: 11px;letter-spacing: 0;}
 	article{width: 95%;margin: 0 auto;height: 100%;display: table;}
 	form .goup-left{width: 49%;float: left;margin-right: 1%;}
@@ -131,7 +151,7 @@ and (max-width : 1223px){
 	#trolley{width: 70px;bottom: 23%;left: 24%;}
 	.button{width: 49%;margin-top: 20px;float: left;}
 	.button:nth-child(even){margin-right: 2%;background-color: #696969;}
-	#copy-register{width: 340px;margin: 0 auto 4% auto;}
+	#copy-register{width: 340px;margin: 0 0 4% 0;left: calc(50% - 170px);}
 	form p{font-size: 11px;letter-spacing: 0;}
 	article{width: 75%;margin: 0 auto;height: 100%;display: table;}
 	form .goup-left{width: 49%;float: left;margin-right: 1%;}
@@ -153,7 +173,7 @@ and (max-width : 1499px){
 	#trolley{width: 70px;bottom: 23%;left: 24%;}
 	.button{width: 49%;margin-top: 20px;float: left;}
 	.button:nth-child(even){margin-right: 2%;background-color: #696969;}
-	#copy-register{width: 360px; margin: 0 auto 4% auto;}
+	#copy-register{width: 360px;margin: 0 0 4% 0;left: calc(50% - 180px);}
 	form p{font-size: 11px;letter-spacing: 0;}
 	article{width: 60%;margin: 0 auto;height: 100%;display: table;}
 	form .goup-left{width: 49%;float: left;margin-right: 1%;}
@@ -173,7 +193,7 @@ and (max-width : 1499px){
 	#trolley{width: 80px;bottom: 28%;left: 2%;}
 	.button{width: 49%;margin-top: 20px;float: left;}
 	.button:nth-child(even){margin-right: 2%;background-color: #696969;}
-	#copy-register{width: 360px; margin: 0 auto 4% auto;}
+	#copy-register{width: 360px; margin: 0 0 4% 0;left: calc(50% - 180px);}
 	form p{font-size: 11px;letter-spacing: 0;}
 	article{width: 50%;margin: 0 auto;height: 100%;display: table;}
 	form .goup-left{width: 49%;float: left;margin-right: 1%;}
