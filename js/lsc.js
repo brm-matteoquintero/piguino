@@ -20,7 +20,8 @@ jQuery(document).ready(function() {
             if(jQuery.inArray(videoi.replace("thumbnail-",""), randoR)){
                 //console.log(videoi);
                 //console.log('no está');
-                window.location = "video";
+                localStorage.setItem("videoi",videoi);
+                window.location = "preparacion";
             }else{
                 //console.log(videoi);
                 //console.log('está');
@@ -51,7 +52,8 @@ function clickReceta(videoi){
             if(jQuery.inArray(videoi.replace("thumbnail-",""), randoR)){
                 //console.log(videoi);
                 //console.log('no está');
-                window.location = "video";
+                localStorage.setItem("videoi",videoi);
+                window.location = "preparacion";
             }else{
                 //console.log(videoi);
                 //console.log('está');
