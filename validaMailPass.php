@@ -1,12 +1,19 @@
 <?php
 require("db/requires.php");
-//printVar($_SERVER);
+printVar($_SERVER);
 $url=$_SERVER['QUERY_STRING'];
 
 $session= new manejaSession();
 $protected=$session->llamaPass();
 
-
+$protocol=$session->site_protocol();
+if($protocol=="https://"){
+    	$secure=true;
+    	$httponly=true;
+    }else{
+    	$secure=false;
+    	$httponly=true;
+    }
 
 $idUser=$session->decryptS($url,$protected);
 //printVar($idUser);
@@ -48,7 +55,7 @@ if($dfecha < $afecha){
 	   		setcookie('ywd_fr',$datoCookie, time() + 1200, '/');
 			setcookie('ywd_usu', $creaSessionU, time() + 1200, '/', $secure, $httponly);
 			
-			header('location: perfil');
+			header('location: recuperarContrasenia');
     }
 
 }

@@ -43,7 +43,7 @@ window.fbAsyncInit = function() {
       var getFacebookData = function () {
         obtenerFotoPerfil()
         FB.api('/me', 'get', { access_token: token, fields: 'id,first_name,last_name,email' } ,function (response) {
-          console.log(response);
+          //console.log(response);
           //console.log(response.first_name);
           jQuery("#idRs").val('');
           jQuery("#name").val('');
@@ -292,27 +292,27 @@ jQuery(document).on('change','#lepas',function(){
     jQuery("#lepas").each(function () {
         var validated =  true;
         if(this.value.length < 8){
-          console.log('menor');
+          //console.log('menor');
           $('.mensajes-pass').append('<p>La contraseña no debe ser menor a ocho caracteres</p>').show('fade');
             validated = false;
         }
         if(!/\d/.test(this.value)){
-            console.log('digito');
+            //console.log('digito');
           $('.mensajes-pass').append('<p>La contraseña debe contener al menos un digito</p>').show('fade');
             validated = false;
         }
         if(!/[a-z]/.test(this.value)){
-          console.log('minuscula');
+          //console.log('minuscula');
           $('.mensajes-pass').append('<p>La contraseña debe contener al menos una minúscula </p>').show('fade');
             validated = false;          
         }
         if(!/[A-Z]/.test(this.value)){
-          console.log('mayuscula');
+          //console.log('mayuscula');
           $('.mensajes-pass').append('<p>La contraseña debe contener al menos una mayúscula</p>').show('fade');
             validated = false;
         }
         if(!/[`~!@#$%^&*()_°¬|+\-=?;:'",.<>\{\}\[\]\\\/]/gi.test(this.value)){
-            console.log('especiales');
+            //console.log('especiales');
           $('.mensajes-pass').append('<p>La contraseña debe contener al menos un caracter especial</p>').show('fade');
             validated = false;
           
@@ -486,7 +486,7 @@ function compartirFacebook(title,picture){
   var video = localStorage.getItem('video');
   videos=video.split('"');
   var enc = window.btoa(videos[1]);
-  console.log(videos[1]);
+  //console.log(videos[1]);
  FB.ui({
    method: 'feed',
    name: title,

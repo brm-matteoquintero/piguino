@@ -1,5 +1,4 @@
 <?php
-
 require("db/requires.php");
 $session= new manejaSession();
 $registro= new Registro();
@@ -40,6 +39,8 @@ if(isset($_COOKIE['ywd_usu']) && $_COOKIE['ywd_usu']!='' && isset($_COOKE['ywd_f
 	$cuentar=count($recetas);
 	//$recetasDesb=$registro->recetasPingU(1,$idUser);
 	//var_dump($recetasDesb);die();
+	// Videos que tienen bloqueados
+	$randoR=array("1","5","8","13","14");
 	for ($i=0; $i < $cuentar; $i++) {
 		# code...
 		//printVar($recetas[$i]);
@@ -49,11 +50,13 @@ if(isset($_COOKIE['ywd_usu']) && $_COOKIE['ywd_usu']!='' && isset($_COOKE['ywd_f
 		//printVar($recetas[$i]->id);
 		$recetasDesb=$registro->recetasPingU($recetas[$i]->id,$idUser);
 		//printVar($recetasDesb,'desb');
-		if($recetasDesb){
+		if(in_array($id, $randoR) && $recetasDesb){
+			// si el video esta bloqueado
 			//printVar($i,'conteo');
 			//printVar("locked$id",'no');
 			$smarty->assign("locked$id",'no');
 		}else{
+			// si el video esta desbloqueado
 			$smarty->assign("locked$id",'si');
 		}
 		$smarty->assign("id-[$id]",$id);
@@ -68,8 +71,8 @@ if(isset($_COOKIE['ywd_usu']) && $_COOKIE['ywd_usu']!='' && isset($_COOKE['ywd_f
 	$protected=$session->llamaPass();
 	$createCookieU=$session->start_session('ywd_usud',true);
 	$datoCookie=$session->encryptS($idUsuarioL,$protected);
-	$randoR=array("1","1","1");
-	$recetasDesb=array_rand($randoR);
+	$randoR=array("1","5","8","13","14");
+	//$recetasDesb=array_rand($randoR);
 	//printVar($randoR[$recetasDesb]);
 	$recetas=$registro->recetasPing();
 	$cuentar=count($recetas);
@@ -82,11 +85,11 @@ if(isset($_COOKIE['ywd_usu']) && $_COOKIE['ywd_usu']!='' && isset($_COOKE['ywd_f
 		//printVar($nombre,"nombre-[$id]");
 		//printVar($idLock);
 		//$smarty->assign("locked$id",$idLock);
-		if($id==$randoR[$recetasDesb]){
+		if(in_array($id, $randoR)){
 			//printVar($randoR);
-			$smarty->assign("locked$id",'no');
-		}else{
 			$smarty->assign("locked$id",'si');
+		}else{
+			$smarty->assign("locked$id",'no');
 		}
 		$smarty->assign("id-[$id]",$id);
 		$smarty->assign("nombre-$id",$nombre);

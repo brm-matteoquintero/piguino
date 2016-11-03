@@ -36,7 +36,10 @@ switch ($vrtCtr) {
 	/*Actualiza perfil*/
 	case 'desc':
 	$data=$varPost['video'];
+	//$data=str_replace('"','',$data);
+	//printVar($data);
 	$desc=$session->decryptS($data,$protected);
+	//printVar($desc);
 	echo json_encode($desc);
 	break;
 	case 'rec':

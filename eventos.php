@@ -1,6 +1,6 @@
 <?php
 require('db/requires.php');
-ini_set('display_errors','1');
+ini_set('display_errors','0');
 @error_reporting(0);
 /*se ejecutan eventos dependiendo de lo solicitado*/
 $varPost=filter_input_array(INPUT_POST);
@@ -14,7 +14,7 @@ $protected=$session->llamaPass();
     	$httponly=true;
     }else{
     	$secure=false;
-    	$httponly=false;
+    	$httponly=true;
     }
 
 
@@ -42,7 +42,7 @@ switch ($vrtCtr) {
 			$registrar->mailC($campos);
 			if($registrar>0){
 				$para  = $mandaM[0]->email;
-				$urlEnvio="http://www.heladospinguino.com.ec/planpinguino/?".$datoCookie;
+				$urlEnvio="http://www.heladospinguino.com.ec/planpinguino/validaMailPass?".$datoCookie;
 				$asunto = 'Mensaje de recuperación';
 				$mensaje= "Hola, soy un mensaje, por favor de click en el link adjunto ". $urlEnvio ;
 		
@@ -202,6 +202,7 @@ switch ($vrtCtr) {
 				$actualizaP=$registrar->acutalizaPerfil($campos);
 				if($actualizaP>0){
 					$mensaje="exitoso";
+					setcookie("ywd_vidst", "", time()-24600);
 				}else{
 					$mensaje="noguarda";
 				}

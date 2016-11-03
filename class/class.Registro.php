@@ -129,6 +129,7 @@ class Registro {
 	}
 	/*Función para restringir el acceso al cambio de contraseña desde mail*/
 	function mailC($campos){
+		//DB_DataObject::debugLevel(1);
 		$passC=DB_DataObject::Factory('TbRemeberPass');
 		$passC->mail=$campos['mail'];
 		$passC->keyMail=$campos['hash'];

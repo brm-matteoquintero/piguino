@@ -48,6 +48,7 @@
 			$campos['idReceta']=$idReceta;
 			$recetaxusuario=$registrar->usuarioReceta($campos);
 			setcookie('ywd_vidst','', time() - 3600, '/');
+            unset($_COOKIE['ywd_vidst']);
 		}
 		//printvar($datoCookie,'holaC');
 		//printvar($httponly,'holaC');

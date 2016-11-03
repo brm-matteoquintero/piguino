@@ -9,14 +9,23 @@ jQuery(document).ready(function() {
             loadAjax(videost,'rec');
         }else{
             
-       
+        var randoR=Array("1","5","8","13","14");
         var videoi = jQuery(this).attr('data');
+        //videoi=videoi.replace("thumbnail-","");
         var data = syncCAjax(videoi,'enc');
         if (window.localStorage !== undefined) {
             var fields = videoi;
             //console.log(fields);
             localStorage.setItem("video", JSON.stringify(data));
-            window.location = "preparacion";
+            if(jQuery.inArray(videoi.replace("thumbnail-",""), randoR)){
+                //console.log(videoi);
+                //console.log('no está');
+                window.location = "video";
+            }else{
+                //console.log(videoi);
+                //console.log('está');
+                window.location = "preparacion";
+            }
         } else {
             console.log("Storage Failed. Try refreshing");
         }
@@ -27,6 +36,32 @@ jQuery(document).ready(function() {
     });
     
 });
+
+function clickReceta(videoi){
+        /*Comprobación de video*/
+                     console.log(videoi);
+        var randoR=Array("1","5","8","13","14");
+        var videoi = videoi;
+        //videoi=videoi.replace("thumbnail-","");
+        var data = syncCAjax(videoi,'enc');
+        if (window.localStorage !== undefined) {
+            var fields = videoi;
+            //console.log(fields);
+            localStorage.setItem("video", JSON.stringify(data));
+            if(jQuery.inArray(videoi.replace("thumbnail-",""), randoR)){
+                //console.log(videoi);
+                //console.log('no está');
+                window.location = "video";
+            }else{
+                //console.log(videoi);
+                //console.log('está');
+                window.location = "preparacion";
+            }
+        }         
+        //console.log(videoi);
+      
+   
+}
 
 function syncCAjax(videoi,vrtCrt) {
     var urlV = 'syncC';
@@ -92,9 +127,40 @@ function loadAjax(videost,vrtCrt){
         },
     success:function(data){
      console.log(data);
-     if(data=='enviarR'){
+     var fr=getCookie("ywd_fr");
+     //console.log(fr);
+     if(fr==undefined){
+        fr='';
+     }
+     if(data=='enviarR' && fr==''){
          window.location='registro';
+     }else{
+       $(".mix").on("click", function() {
+        var videoi = jQuery(this).attr('data');
+        clickReceta(videoi);
+        });
      }
     }
   });
 }
+
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
+    }
+    else
+    {
+        begin += 2;
+        var end = document.cookie.indexOf(";", begin);
+        if (end == -1) {
+        end = dc.length;
+        }
+    }
+    // because unescape has been deprecated, replaced with decodeURI
+    //return unescape(dc.substring(begin + prefix.length, end));
+    return decodeURI(dc.substring(begin + prefix.length, end));
+} 
